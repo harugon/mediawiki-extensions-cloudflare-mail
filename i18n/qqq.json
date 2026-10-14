@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"harugon"
+		]
+	},
+	"cloudflaremail-desc": "{{desc|name=CloudflareMail|url=https://github.com/harugon/mediawiki-extensions-cloudflare-mail}}"
+}

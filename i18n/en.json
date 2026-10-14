@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"harugon"
+		]
+	},
+	"cloudflaremail-desc": "Sends wiki email through [https://developers.cloudflare.com/email-service/ Cloudflare Email Service]"
+}
