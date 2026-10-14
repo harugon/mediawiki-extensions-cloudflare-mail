@@ -5,6 +5,4 @@
 	<arg name="extensions" value="php" />
 	<arg name="encoding" value="UTF-8" />
 	<exclude-pattern>vendor/</exclude-pattern>
-	<!-- Stand-ins for MediaWiki core classes used by the standalone test runner -->
-	<exclude-pattern>tests/standalone/</exclude-pattern>
 </ruleset>

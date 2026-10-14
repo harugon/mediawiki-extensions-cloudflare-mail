@@ -17,54 +17,31 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\CloudflareMail\\": "src/"
 	},
-	"TestAutoloadNamespaces": {
-		"MediaWiki\\Extension\\CloudflareMail\\Tests\\": "tests/phpunit/"
-	},
 	"MessagesDirs": {
 		"CloudflareMail": [
 			"i18n"
 		]
 	},
-	"ServiceWiringFiles": [
-		"src/ServiceWiring.php"
-	],
 	"HookHandlers": {
 		"main": {
-			"class": "MediaWiki\\Extension\\CloudflareMail\\Hooks\\MailHookHandler",
+			"class": "MediaWiki\\Extension\\CloudflareMail\\Hooks",
 			"services": [
-				"CloudflareMail.Mailer",
+				"HttpRequestFactory",
 				"MainConfig"
 			]
 		}
 	},
 	"Hooks": {
-		"UserMailerTransformMessage": "main",
 		"AlternateUserMailer": "main"
 	},
 	"config": {
 		"CloudflareMailAccountId": {
 			"value": "",
-			"description": "Cloudflare account ID that owns the Email Service sending domain."
+			"description": "Cloudflare account ID."
 		},
 		"CloudflareMailApiToken": {
 			"value": "",
-			"description": "Cloudflare API token with the \"Email Sending: Edit\" permission. Keep this out of version control, e.g. read it from an environment variable."
-		},
-		"CloudflareMailApiBaseUrl": {
-			"value": "https://api.cloudflare.com/client/v4",
-			"description": "Base URL of the Cloudflare API. Only change this for testing."
-		},
-		"CloudflareMailTimeout": {
-			"value": 10,
-			"description": "Timeout in seconds for a single request to the Cloudflare API."
-		},
-		"CloudflareMailMaxRetries": {
-			"value": 2,
-			"description": "How many times a request is retried after a network error, HTTP 429 or HTTP 5xx response."
-		},
-		"CloudflareMailFallbackOnError": {
-			"value": false,
-			"description": "If true, a failed Cloudflare request falls back to MediaWiki's default mailer ($wgSMTP or PHP mail()) instead of reporting an error."
+			"description": "Cloudflare API token with the \"Email Sending: Edit\" permission."
 		}
 	},
 	"manifest_version": 2
