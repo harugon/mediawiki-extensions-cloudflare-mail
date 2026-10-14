@@ -1,0 +1,48 @@
+{
+	"name": "CloudflareMail",
+	"version": "1.0.0",
+	"author": [
+		"harugon"
+	],
+	"url": "https://github.com/harugon/mediawiki-extensions-cloudflare-mail",
+	"descriptionmsg": "cloudflaremail-desc",
+	"license-name": "MIT",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.43.0",
+		"platform": {
+			"php": ">= 8.1"
+		}
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\CloudflareMail\\": "src/"
+	},
+	"MessagesDirs": {
+		"CloudflareMail": [
+			"i18n"
+		]
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\CloudflareMail\\Hooks",
+			"services": [
+				"HttpRequestFactory",
+				"MainConfig"
+			]
+		}
+	},
+	"Hooks": {
+		"AlternateUserMailer": "main"
+	},
+	"config": {
+		"CloudflareMailAccountId": {
+			"value": "",
+			"description": "Cloudflare account ID."
+		},
+		"CloudflareMailApiToken": {
+			"value": "",
+			"description": "Cloudflare API token with the \"Email Sending: Edit\" permission."
+		}
+	},
+	"manifest_version": 2
+}

@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"harugon"
+		]
+	},
+	"cloudflaremail-desc": "ウィキのメールを [https://developers.cloudflare.com/email-service/ Cloudflare Email Service] 経由で送信する"
+}

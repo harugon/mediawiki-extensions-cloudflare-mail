@@ -1,0 +1,23 @@
+{
+	"name": "harugon/cloudflare-mail",
+	"type": "mediawiki-extension",
+	"description": "MediaWiki extension that sends wiki email through the Cloudflare Email Service API",
+	"license": "MIT",
+	"require-dev": {
+		"mediawiki/mediawiki-codesniffer": "48.0.2",
+		"php-parallel-lint/php-console-highlighter": "1.0.0",
+		"php-parallel-lint/php-parallel-lint": "1.4.0"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpcs -sp --cache"
+		],
+		"fix": "phpcbf"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}
